@@ -9666,11 +9666,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Edward\\Documents\\JSON-Manipulation\\API Test\\API Test\\API Test.csproj",
+      "projectUniqueName": "C:\\Users\\Edward\\Documents\\Repositories\\MySchoolAPI\\API Test\\API Test\\API Test.csproj",
       "projectName": "API Test",
-      "projectPath": "C:\\Users\\Edward\\Documents\\JSON-Manipulation\\API Test\\API Test\\API Test.csproj",
+      "projectPath": "C:\\Users\\Edward\\Documents\\Repositories\\MySchoolAPI\\API Test\\API Test\\API Test.csproj",
       "packagesPath": "C:\\Users\\Edward\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Edward\\Documents\\JSON-Manipulation\\API Test\\API Test\\obj\\",
+      "outputPath": "C:\\Users\\Edward\\Documents\\Repositories\\MySchoolAPI\\API Test\\API Test\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Edward\\AppData\\Roaming\\NuGet\\NuGet.Config",

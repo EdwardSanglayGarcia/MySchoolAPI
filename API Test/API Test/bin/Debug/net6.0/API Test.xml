@@ -9,9 +9,15 @@
             Sample
             </summary>
         </member>
+        <member name="M:API_Test.Controllers.MySchoolController.#ctor(API_Test.Data.MySchoolDBContext)">
+            <summary>
+            MySchoolController
+            </summary>
+            <param name="context"></param>
+        </member>
         <member name="M:API_Test.Controllers.MySchoolController.Get">
             <summary>
-            Sample asasasasas
+            Lists down all the students including their personal information and grades.
             </summary>
             <returns></returns>
         </member>
@@ -30,15 +36,39 @@
                        "id": 0,
                        "created": "2022-06-09T18:51:02.024Z",
                        "updated": "2022-06-09T18:51:02.024Z",
-                       "person": {
-                                    "id": 0,
-                                    "created": "2022-06-09T18:51:02.024Z",
-                                    "updated": "2022-06-09T18:51:02.024Z",
-                                    "firstName": "string",
-                                    "lastName": "string"
-                                  }
+                       "person":
+                        {
+                            "id": 0,
+                            "created": "2022-06-09T18:51:02.024Z",
+                            "updated": "2022-06-09T18:51:02.024Z",
+                            "firstName": "string",
+                            "lastName": "string"
+                        }
                     }
             </remarks>
+        </member>
+        <member name="M:API_Test.Controllers.MySchoolController.UpdateStudentYear(System.Int32,API_Test.Enums.StudentYear)">
+            <summary>
+            Updates the year level of students
+            </summary>
+            <param name="studentId"></param>
+            <param name="studentYearParameter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:API_Test.Controllers.MySchoolController.InsertStudentGrade(System.Int32,API_Test.Models.Grade)">
+            <summary>
+            Inserts the grade of the student
+            </summary>
+            <param name="gradeListId"></param>
+            <param name="grade"></param>
+            <returns></returns>
+        </member>
+        <member name="M:API_Test.Controllers.MySchoolController.DeleteStudentGrade(System.Int32)">
+            <summary>
+            Delete a record from the student grades by means of adding its respective id.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
     </members>
 </doc>

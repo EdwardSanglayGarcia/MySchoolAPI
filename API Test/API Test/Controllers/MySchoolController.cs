@@ -17,14 +17,19 @@ namespace API_Test.Controllers
     public class MySchoolController : ControllerBase
     {
 
-        private MySchoolDBContext _context;
+        private readonly MySchoolDBContext _context;
+        /// <summary>
+        /// MySchoolController
+        /// </summary>
+        /// <param name="context"></param>
         public MySchoolController(MySchoolDBContext context)
         {
             this._context = context;
         }
-
+    
+        #region Get All Students
         /// <summary>
-        /// Sample asasasasas
+        /// Lists down all the students including their personal information and grades.
         /// </summary>
         /// <returns></returns>
         [HttpGet]
@@ -38,7 +43,9 @@ namespace API_Test.Controllers
                 .ToListAsync();
             return operation;
         }
+        #endregion
 
+        #region Insert Student
         /// <summary>
         /// Creates a student record that would consume the Student and Person entity.
         /// </summary>
@@ -53,27 +60,35 @@ namespace API_Test.Controllers
         ///            "id": 0,
         ///            "created": "2022-06-09T18:51:02.024Z",
         ///            "updated": "2022-06-09T18:51:02.024Z",
-        ///            "person": {
-        ///                         "id": 0,
-        ///                         "created": "2022-06-09T18:51:02.024Z",
-        ///                         "updated": "2022-06-09T18:51:02.024Z",
-        ///                         "firstName": "string",
-        ///                         "lastName": "string"
-        ///                       }
+        ///            "person":
+        ///             {
+        ///                 "id": 0,
+        ///                 "created": "2022-06-09T18:51:02.024Z",
+        ///                 "updated": "2022-06-09T18:51:02.024Z",
+        ///                 "firstName": "string",
+        ///                 "lastName": "string"
+        ///             }
         ///         }
         /// </remarks>
-
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> InsertStudent(Student student, StudentYear Syear)
+        public async Task<IActionResult> InsertStudent(Student student, StudentYear sYear)
         {
-            student.StudentYear = Syear;
+            student.StudentYear = sYear;
             await _context.Students.AddAsync(student);
             await _context.SaveChangesAsync();
             return CreatedAtAction(nameof(InsertStudent), new { id = student.Id }, student);
         }
+        #endregion
 
+        #region Update Year Level
+        /// <summary>
+        /// Updates the year level of students
+        /// </summary>
+        /// <param name="studentId"></param>
+        /// <param name="studentYearParameter"></param>
+        /// <returns></returns>
         [HttpPatch]
         public async Task<IActionResult> UpdateStudentYear(int studentId, StudentYear studentYearParameter)
         {
@@ -89,7 +104,15 @@ namespace API_Test.Controllers
                 return Ok();
             }
         }
+        #endregion
 
+        #region Insert Student Grade
+        /// <summary>
+        /// Inserts the grade of the student
+        /// </summary>
+        /// <param name="gradeListId"></param>
+        /// <param name="grade"></param>
+        /// <returns></returns>
         [HttpPut]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -109,7 +132,14 @@ namespace API_Test.Controllers
                 return Ok();
             }
         }
+        #endregion
 
+        #region Delete Student Grade
+        /// <summary>
+        /// Delete a record from the student grades by means of adding its respective id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -128,6 +158,7 @@ namespace API_Test.Controllers
                 return Ok();
             }
         }
+        #endregion
 
 
     }
