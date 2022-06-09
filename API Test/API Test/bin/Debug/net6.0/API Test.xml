@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>API Test</name>
+    </assembly>
+    <members>
+        <member name="T:API_Test.Controllers.MySchoolController">
+            <summary>
+            Sample
+            </summary>
+        </member>
+        <member name="M:API_Test.Controllers.MySchoolController.Get">
+            <summary>
+            Sample asasasasas
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API_Test.Controllers.MySchoolController.InsertStudent(API_Test.Models.Student,API_Test.Enums.StudentYear)">
+            <summary>
+            Creates a student record that would consume the Student and Person entity.
+            </summary>
+            <param name="student"></param>
+            <param name="Syear"></param>
+            <returns></returns>
+            <remarks>
+            Sample Request:
+            
+                    POST
+                    {
+                       "id": 0,
+                       "created": "2022-06-09T18:51:02.024Z",
+                       "updated": "2022-06-09T18:51:02.024Z",
+                       "person": {
+                                    "id": 0,
+                                    "created": "2022-06-09T18:51:02.024Z",
+                                    "updated": "2022-06-09T18:51:02.024Z",
+                                    "firstName": "string",
+                                    "lastName": "string"
+                                  }
+                    }
+            </remarks>
+        </member>
+    </members>
+</doc>
