@@ -34,7 +34,7 @@ namespace API_Test.Controllers
         /// <returns></returns>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IEnumerable<Student>> Get()
+        public async Task<IEnumerable<Student>> GetAllStudents()
         {
             var operation = await _context.Students
                 .Include(person => person.Person)
