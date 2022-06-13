@@ -18,10 +18,6 @@ namespace API_Test.Controllers
     {
 
         private readonly MySchoolDBContext _context;
-        /// <summary>
-        /// MySchoolController
-        /// </summary>
-        /// <param name="context"></param>
         public MySchoolController(MySchoolDBContext context)
         {
             this._context = context;
@@ -159,7 +155,5 @@ namespace API_Test.Controllers
             }
         }
         #endregion
-
-
     }
 }

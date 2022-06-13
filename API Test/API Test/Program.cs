@@ -23,7 +23,7 @@ builder.Services.AddSwaggerGen(c =>
             Version = "Final Version",
             License = new OpenApiLicense
             {
-                Name = "Mapua University License",
+                Name = "Sample License",
                 Url = new Uri("https://github.com/ESGFreelance")
             },
             Contact = new OpenApiContact
@@ -73,7 +73,11 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    //app.UseSwaggerUI();
+    app.UseSwaggerUI(options =>
+    {
+        options.DefaultModelsExpandDepth(-1);
+    }); //Use this to remove the schema.
 }
 
 app.UseHttpsRedirection();
