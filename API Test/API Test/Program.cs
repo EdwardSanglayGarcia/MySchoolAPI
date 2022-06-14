@@ -73,11 +73,11 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    //app.UseSwaggerUI();
-    app.UseSwaggerUI(options =>
-    {
-        options.DefaultModelsExpandDepth(-1);
-    }); //Use this to remove the schema.
+    app.UseSwaggerUI();
+    //app.UseSwaggerUI(options =>
+    //{
+    //    options.DefaultModelsExpandDepth(-1);
+    //}); //Use this to remove the schema.
 }
 
 app.UseHttpsRedirection();
