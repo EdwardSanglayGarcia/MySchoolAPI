@@ -1,13 +1,12 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using API_Test.Wrapper;
 using Microsoft.AspNetCore.Mvc;
-using System.Linq;
 
 namespace API_Test.Controllers
 {
     using API_Test.Data;
+    using API_Test.Enums;
     using API_Test.Models;
     using Microsoft.EntityFrameworkCore;
-    using API_Test.Enums;
 
     /// <summary>
     /// Sample
@@ -22,21 +21,33 @@ namespace API_Test.Controllers
         {
             this._context = context;
         }
-    
+
         #region Get All Students
         /// <summary>
         /// Lists down all the students including their personal information and grades.
         /// </summary>
         /// <returns></returns>
         [HttpGet]
+        [Route("/GetAllStudents")]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IEnumerable<Student>> GetAllStudents()
+        public async Task<IEnumerable<Student>> GetAllStudents([FromQuery] PagedResponse pagedResponse)
         {
+            //var operation = await _context.Students
+            //    .Include(person => person.Person)
+            //    .Include(gradeList => gradeList.GradeList)
+            //    .Include(grade => grade.GradeList.Grades)
+            //    .Skip((page - 1) * items)
+            //    .Take(items)
+            //    .ToListAsync();
+
             var operation = await _context.Students
-                .Include(person => person.Person)
-                .Include(gradeList => gradeList.GradeList)
-                .Include(grade => grade.GradeList.Grades)
-                .ToListAsync();
+            .Include(person => person.Person)
+            .Include(gradeList => gradeList.GradeList)
+            .Include(grade => grade.GradeList.Grades)
+            .Skip((pagedResponse.Page - 1) * pagedResponse.ItemsPerPage)
+            .Take(pagedResponse.ItemsPerPage)
+            .ToListAsync();
+
             return operation;
         }
         #endregion

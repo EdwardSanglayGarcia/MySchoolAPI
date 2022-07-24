@@ -528,3 +528,6 @@ C:\Users\Edward\Documents\Repositories\MySchoolAPI\API Test\API Test\obj\Debug\n
 C:\Users\Edward\Documents\Repositories\MySchoolAPI\API Test\API Test\obj\Debug\net6.0\API Test.pdb
 C:\Users\Edward\Documents\Repositories\MySchoolAPI\API Test\API Test\obj\Debug\net6.0\API Test.genruntimeconfig.cache
 C:\Users\Edward\Documents\Repositories\MySchoolAPI\API Test\API Test\obj\Debug\net6.0\ref\API Test.dll
+C:\Users\Edward\Documents\Repositories\MySchoolAPI\API Test\API Test\bin\Debug\net6.0\System.Net.Http.Formatting.dll
+C:\Users\Edward\Documents\Repositories\MySchoolAPI\API Test\API Test\bin\Debug\net6.0\System.Web.Http.dll
+C:\Users\Edward\Documents\Repositories\MySchoolAPI\API Test\API Test\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll

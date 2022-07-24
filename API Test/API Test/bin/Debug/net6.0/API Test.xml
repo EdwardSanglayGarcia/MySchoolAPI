@@ -9,7 +9,7 @@
             Sample
             </summary>
         </member>
-        <member name="M:API_Test.Controllers.MySchoolController.GetAllStudents">
+        <member name="M:API_Test.Controllers.MySchoolController.GetAllStudents(API_Test.Wrapper.PagedResponse)">
             <summary>
             Lists down all the students including their personal information and grades.
             </summary>
